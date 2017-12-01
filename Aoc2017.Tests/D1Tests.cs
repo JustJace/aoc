@@ -12,7 +12,7 @@ namespace Aoc2017.Tests
         [Test(Description = "1.1")]
         public void Test_BruteForceP1(string input, int answer)
         {
-            Assert.AreEqual(answer, D1.D1Solver.BruteForceP1(input));
+            Assert.AreEqual(answer, new D1.D1Solver().BruteForceP1(input));
         }
 
         [TestCase("1212", 6)]
@@ -23,7 +23,7 @@ namespace Aoc2017.Tests
         [Test(Description = "1.2")]
         public void Test_BruteForceP2(string input, int answer)
         {
-            Assert.AreEqual(answer, D1.D1Solver.BruteForceP2(input));
+            Assert.AreEqual(answer, new D1.D1Solver().BruteForceP2(input));
         }
     }
 }
