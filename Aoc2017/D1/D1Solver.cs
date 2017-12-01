@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Linq;
+using System.Diagnostics;
 
 namespace Aoc2017.D1
 {
-    public static class D1Solver
+    public class D1Solver
     {
-        public static int SolveP1()
+        public int SolveP1()
         {
             return BruteForceP1(File.ReadAllText(@"D1\P1And2.input"));
         }
 
-        internal static int BruteForceP1(string input)
+        internal int BruteForceP1(string input)
         {
             var numbers = input.ToCharArray()
                                .Select(c => int.Parse(c.ToString()))
@@ -30,12 +31,12 @@ namespace Aoc2017.D1
             return sum;
         }
 
-        public static int SolveP2()
+        public int SolveP2()
         {
             return BruteForceP2(File.ReadAllText(@"D1\P1And2.input"));
         }
 
-        internal static int BruteForceP2(string input)
+        internal int BruteForceP2(string input)
         {
             var numbers = input.ToCharArray()
                                .Select(c => int.Parse(c.ToString()))
