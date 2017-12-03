@@ -22,7 +22,13 @@ namespace Aoc2017
             PrintSolution("2.1", day2.SolveP1);
             PrintSolution("2.2", day2.SolveP2);
 
+            var day3 = new D3.D3Solver();
+
+            PrintSolution("3.1", day3.SolveP1);
+            PrintSolution("3.2", day3.SolveP2);
+
             Console.ReadLine();
+
         }
 
         static void PrintSolution<T>(string moniker, Func<T> solveFn)
