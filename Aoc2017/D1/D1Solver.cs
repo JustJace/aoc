@@ -9,11 +9,7 @@ namespace Aoc2017.D1
 {
     public class D1Solver
     {
-        public int SolveP1()
-        {
-            return BruteForceP1(File.ReadAllText(@"D1\P1And2.input"));
-        }
-
+        public int SolveP1() => BruteForceP1(File.ReadAllText(@"D1\D1.input"));
         internal int BruteForceP1(string input)
         {
             var numbers = input.ToCharArray()
@@ -31,11 +27,7 @@ namespace Aoc2017.D1
             return sum;
         }
 
-        public int SolveP2()
-        {
-            return BruteForceP2(File.ReadAllText(@"D1\P1And2.input"));
-        }
-
+        public int SolveP2() => BruteForceP2(File.ReadAllText(@"D1\D1.input"));
         internal int BruteForceP2(string input)
         {
             var numbers = input.ToCharArray()

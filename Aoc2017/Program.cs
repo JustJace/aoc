@@ -17,6 +17,11 @@ namespace Aoc2017
             PrintSolution("1.1", day1.SolveP1);
             PrintSolution("1.2", day1.SolveP2);
 
+            var day2 = new D2.D2Solver();
+
+            PrintSolution("2.1", day2.SolveP1);
+            PrintSolution("2.2", day2.SolveP2);
+
             Console.ReadLine();
         }
 
