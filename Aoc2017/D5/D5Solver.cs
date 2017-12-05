@@ -11,7 +11,9 @@ namespace Aoc2017.D5
         public int SolveP1() => BruteForceP1(File.ReadAllText(@"D5\D5.input"));
         private int BruteForceP1(string input)
         {
-            var jumps = input.Split(Environment.NewLine).Select(s => int.Parse(s)).ToArray();
+            var jumps = input.Split(Environment.NewLine)
+                             .Select(int.Parse)
+                             .ToArray();
 
             var jumpCount = 0;
             var nextInstruction = 0;
@@ -30,7 +32,9 @@ namespace Aoc2017.D5
         public int SolveP2() => BruteForceP2(File.ReadAllText(@"D5\D5.input"));
         private int BruteForceP2(string input)
         {
-            var jumps = input.Split(Environment.NewLine).Select(s => int.Parse(s)).ToArray();
+            var jumps = input.Split(Environment.NewLine)
+                             .Select(int.Parse)
+                             .ToArray();
 
             var jumpCount = 0;
             var nextInstruction = 0;
@@ -39,10 +43,12 @@ namespace Aoc2017.D5
             {
                 var currentInstruction = nextInstruction;
                 nextInstruction += jumps[currentInstruction];
+
                 if (jumps[currentInstruction] >= 3)
                     jumps[currentInstruction]--;
                 else
                     jumps[currentInstruction]++;
+
                 jumpCount++;
             }
 
