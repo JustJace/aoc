@@ -47,7 +47,7 @@ namespace Aoc2017.D4
                 if (IsValidPassphraseP2(passphrase))
                     validCount++;
 
-            return validCount;
+            return validCount;  
         }
 
         internal bool IsValidPassphraseP2(string passphrase)
