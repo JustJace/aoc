@@ -9,7 +9,7 @@ namespace Aoc2017.D5
     public class D5Solver
     {
         public int SolveP1() => BruteForceP1(File.ReadAllText(@"D5\D5.input"));
-        private int BruteForceP1(string input)
+        internal int BruteForceP1(string input)
         {
             var jumps = input.Split(Environment.NewLine)
                              .Select(int.Parse)
@@ -30,7 +30,7 @@ namespace Aoc2017.D5
         }
 
         public int SolveP2() => BruteForceP2(File.ReadAllText(@"D5\D5.input"));
-        private int BruteForceP2(string input)
+        internal int BruteForceP2(string input)
         {
             var jumps = input.Split(Environment.NewLine)
                              .Select(int.Parse)
