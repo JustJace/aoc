@@ -26,9 +26,9 @@ namespace Aoc2017.D7
     {
         public string SolveP1() => TreeAndTraverseUp(File.ReadAllText(@"D7\D7.input"));
         private string TreeAndTraverseUp(string input) => FindRoot(ParseAndBuildTree(input));
-
-        public int SolveP2() => BruteForceP2(File.ReadAllText(@"D7\D7.input"));
-        private int BruteForceP2(string input)
+        private string FindRoot(Dictionary<string, Program> programs) => programs.Values.First(p => p.Parent == null).Moniker;
+        public int SolveP2() => SeekAndDestroy(File.ReadAllText(@"D7\D7.input"));
+        private int SeekAndDestroy(string input)
         {
             var programs = ParseAndBuildTree(input);
             var root = programs[FindRoot(programs)];
@@ -120,16 +120,6 @@ namespace Aoc2017.D7
             }
 
             return programs;
-        }
-
-        private string FindRoot(Dictionary<string, Program> programs)
-        {
-            var navProgram = programs.Values.First(p => p.Parent != null);
-
-            while (navProgram.Parent != null)
-                navProgram = navProgram.Parent;
-
-            return navProgram.Moniker;
         }
     }
 }
