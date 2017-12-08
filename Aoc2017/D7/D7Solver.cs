@@ -15,15 +15,10 @@ namespace Aoc2017.D7
         public int StackWeight { get; set; }
         public int TotalWeight => Weight + StackWeight;
         public List<Program> Children { get; } = new List<Program>();
-        public bool IsBalanced()
-        {
-            return Children.Count == 0
-                || Children.Select(c => c.TotalWeight).Distinct().Count() == 1;
-        }
-
+        public bool IsBalanced { get; set; }
         public override string ToString()
         {
-            return $"{Moniker} | {TotalWeight} | {IsBalanced()}";
+            return $"{Moniker} | {TotalWeight} | {IsBalanced}";
         }
     }
 
@@ -38,19 +33,25 @@ namespace Aoc2017.D7
             var programs = ParseAndBuildTree(input);
             var root = programs[FindRoot(programs)];
 
-            RecursivelySetStackWeights(root);
+            RecursivelySetStackWeightsAndBalanced(root);
 
-            // Find the end of imbalance
+            var imbalance = FindHighestImbalancedProgram(root);
+            var problemChild = FindProblemChild(imbalance);
+            var problemSibling = ProgramSibling(problemChild);
+            var weightAdjust = problemSibling.TotalWeight - problemChild.TotalWeight;
+
+            return problemChild.Weight + weightAdjust;
+        }
+
+        private Program ProgramSibling(Program problemChild) => problemChild.Parent.Children.Where(c => c.Moniker != problemChild.Moniker).First();
+
+        private Program FindHighestImbalancedProgram(Program root)
+        {
             var current = root;
-            while (current.Children.Any(c => !c.IsBalanced()))
-                current = current.Children.First(c => !c.IsBalanced());
+            while (current.Children.Any(c => !c.IsBalanced))
+                current = current.Children.First(c => !c.IsBalanced);
 
-            var problemChild = FindProblemChild(current);
-
-            // Any sibling will do
-            var sibling = problemChild.Parent.Children.Where(c => c.Moniker != problemChild.Moniker).First();
-
-            return problemChild.Weight - problemChild.TotalWeight + sibling.TotalWeight;
+            return current;
         }
 
         private Program FindProblemChild(Program parent)
@@ -73,12 +74,16 @@ namespace Aoc2017.D7
             throw new Exception("You told me there was a problem child, but I don't see it.");
         }
 
-        private void RecursivelySetStackWeights(Program program)
+        private void RecursivelySetStackWeightsAndBalanced(Program program)
         {
             foreach (var child in program.Children)
-                RecursivelySetStackWeights(child);
+                RecursivelySetStackWeightsAndBalanced(child);
 
             program.StackWeight = program.Children.Sum(c => c.TotalWeight);
+            program.IsBalanced = program.Children.Count == 0 
+                              || program.Children.Select(c => c.TotalWeight)
+                                                 .Distinct()
+                                                 .Count() == 1;
         }
 
         private Dictionary<string, Program> ParseAndBuildTree(string input)
