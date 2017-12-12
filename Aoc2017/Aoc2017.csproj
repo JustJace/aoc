@@ -10,7 +10,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Update="D10\D10.input">
+        <None Update="D11\D11.input">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="D12\D12.input">

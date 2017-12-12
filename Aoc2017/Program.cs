@@ -48,9 +48,17 @@ namespace Aoc2017
             //PrintSolution("9.1", day9.SolveP1);
             //PrintSolution("9.2", day9.SolveP2);
 
-            var day12 = new D12.D12Solver();
-            PrintSolution("12.1", day12.SolveP1);
-            PrintSolution("12.2", day12.SolveP2);
+            //var day10 = new D10.D10Solver();
+            //PrintSolution("10.1", day10.SolveP1);
+            //PrintSolution("10.2", day10.SolveP2);
+
+            var day11 = new D11.D11Solver();
+            PrintSolution("11.1", day11.SolveP1);
+            PrintSolution("11.2", day11.SolveP2);
+
+            //var day12 = new D12.D12Solver();
+            //PrintSolution("12.1", day12.SolveP1);
+            //PrintSolution("12.2", day12.SolveP2);
 
             Console.ReadLine();
 
