@@ -25,6 +25,9 @@
         <None Update="D8\D8.input">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
+        <None Update="D9\D9.input">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
         <None Include="D2\D2.input">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
