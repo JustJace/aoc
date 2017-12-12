@@ -10,6 +10,12 @@
     </ItemGroup>
 
     <ItemGroup>
+        <None Update="D10\D10.input">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="D12\D12.input">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
         <None Update="D1\D1.input">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
@@ -27,9 +33,6 @@
         </None>
         <None Update="D9\D9.input">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
-        <None Include="D2\D2.input">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>
 
