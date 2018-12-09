@@ -24,7 +24,7 @@ namespace Aoc2018.Solutions
 
             var playerScores = new BigInteger[players];
 
-            var currentPlayer = 1;
+            var currentPlayer = 0;
             var currentMarble = new Node<int>(0);
             currentMarble.Next = currentMarble;
             currentMarble.Previous = currentMarble;
@@ -33,10 +33,10 @@ namespace Aoc2018.Solutions
             {
                 if (m % 23 == 0)
                 {
-                    playerScores[currentPlayer - 1] += m;
                     var removedMarble = RemoveMarbleForGame(currentMarble);
                     currentMarble = removedMarble.Next;
-                    playerScores[currentPlayer - 1] += removedMarble.Value;
+
+                    playerScores[currentPlayer] += removedMarble.Value + m;
                 }
                 else
                 {
@@ -44,8 +44,8 @@ namespace Aoc2018.Solutions
                 }
 
                 currentPlayer++;
-                if (currentPlayer > players)
-                    currentPlayer = 1;
+                if (currentPlayer >= players)
+                    currentPlayer = 0;
             }
 
             return playerScores.Max();
