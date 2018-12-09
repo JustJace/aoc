@@ -22,7 +22,11 @@ namespace Aoc2018
                 }
             }
 
-            foreach (var solver in solvers.OrderBy(s => s.Day).ThenBy(s => s.Part))
+            foreach (var solver in solvers
+                //.OrderBy(s => s.Day).ThenBy(s => s.Part))
+                .OrderByDescending(s => s.Day)
+                .ThenByDescending(s => s.Part)
+                .Take(1))
             {
                 TimedSolvesWithPrint(solver);
             }

@@ -31,29 +31,16 @@ namespace Aoc2018.Solutions
             var map = new int[maxX, maxY];
 
             for (var x = 0; x < maxX; x++)
-            {
                 for (var y = 0; y < maxY; y++)
-                {
-                    var distances = new List<int>();
-
-                    for (var z = 0; z < points.Length; z++)
-                    {
-                        var p = points[z];
-                        map[x, y] += ManhattenDistance(x, y, p.X, p.Y);
-                    }
-                }
-            }
+                    for (var p = 0; p < points.Length; p++)
+                        map[x, y] += ManhattenDistance(x, y, points[p].X, points[p].Y);
 
             var area = 0;
 
             for (var x = 0; x < maxX; x++)
-            {
                 for (var y = 0; y < maxY; y++)
-                {
                     if (map[x, y] < 10000)
                         area++;
-                }
-            }
 
             return area;
         }

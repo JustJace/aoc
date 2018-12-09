@@ -11,12 +11,12 @@ namespace Aoc2018
         int Day { get; }
         int Part { get; }
     }
+
     public abstract class Solver<T> : ISolve
     {
-        protected abstract string Filename { get; }
-
         public abstract int Day { get; }
         public abstract int Part { get; }
+        protected abstract string Filename { get; }
 
         public string Solve()
         {
@@ -29,7 +29,7 @@ namespace Aoc2018
         }
 
         protected abstract T GetAnswer(string input);
-        protected string FormatAnswer(T answer)
+        protected virtual string FormatAnswer(T answer)
         {
             return answer.ToString();
         }

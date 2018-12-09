@@ -56,25 +56,25 @@ namespace Aoc2018.Solutions
                 }
             }
 
-            //using (var fs = new FileStream("d6p1.output", FileMode.CreateNew))
+            //using (var fs = new FileStream("d6p1.output", FileMode.Create))
             //using (var sw = new StreamWriter(fs))
             //{
-            //    for (var x = 0; x < maxX; x++)
+            //    for (var y = 0; y < maxY; y++)
             //    {
-            //        for (var y = 0; y < maxY; y++)
+            //        for (var x = 0; x < maxX; x++)
             //        {
-            //            sw.Write($"{map[x, y]}".PadRight(5));
+            //            sw.Write($"{(char)(map[x, y]+65)}".PadRight(5));
             //        }
 
             //        sw.WriteLine();
             //    }
             //}
 
-            var best = 0;
+            var greatestArea = 0;
 
             for (var z = 0; z < points.Length; z++)
             {
-                var areaPoints = 0;
+                var pointArea = 0;
                 var onEdge = false;
                 for (var x = 0; x < maxX; x++)
                 {
@@ -82,13 +82,13 @@ namespace Aoc2018.Solutions
                     {
                         if (map[x, y] == z)
                         {
-                            areaPoints++;
-
                             if (x == 0 || y == 0 || x == maxX - 1 || y == maxY - 1)
                             {
                                 onEdge = true;
                                 break;
                             }
+
+                            pointArea++;
                         }
                     }
 
@@ -99,11 +99,11 @@ namespace Aoc2018.Solutions
                 if (onEdge)
                     continue;
 
-                if (areaPoints > best)
-                    best = areaPoints;
+                if (pointArea > greatestArea)
+                    greatestArea = pointArea;
             }
 
-            return best;
+            return greatestArea;
         }
 
         private int ManhattenDistance(int x1, int y1, int x2, int y2) => Math.Abs(x1 - x2) + Math.Abs(y1 - y2);

@@ -9,7 +9,6 @@ namespace Aoc2018.Solutions
     {
         public override int Day => 1;
         public override int Part => 2;
-
         protected override string Filename => @"Inputs\d1p1.input";
 
         protected override int GetAnswer(string input)
@@ -18,7 +17,7 @@ namespace Aoc2018.Solutions
             var hash = new HashSet<int>();
             var sum = 0;
 
-            while(true)
+            while (true)
             {
                 foreach (var change in frequenciesChanges)
                 {
