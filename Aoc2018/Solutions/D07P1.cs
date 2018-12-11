@@ -6,11 +6,11 @@ using System.Text.RegularExpressions;
 
 namespace Aoc2018.Solutions
 {
-    public class D7P1 : Solver<string>
+    public class D07P1 : Solver<string>
     {
         public override int Day => 7;
         public override int Part => 1;
-        protected override string Filename => @"Inputs\d7p1.input";
+        protected override string Filename => @"Inputs\d07.input";
 
         protected override string GetAnswer(string input)
         {

@@ -6,11 +6,11 @@ using System.Text.RegularExpressions;
 
 namespace Aoc2018.Solutions
 {
-    public class D3P1 : Solver<int>
+    public class D03P1 : Solver<int>
     {
         public override int Day => 3;
         public override int Part => 1;
-        protected override string Filename => @"Inputs\d3p1.input";
+        protected override string Filename => @"Inputs\d03.input";
 
         protected override int GetAnswer(string input)
         {
@@ -31,26 +31,16 @@ namespace Aoc2018.Solutions
             var claimed = new int[1000, 1000];
 
             foreach (var claim in claims)
-            {
                 for (var x = claim.X; x < claim.X + claim.Width; x++)
-                {
                     for (var y = claim.Y; y < claim.Y + claim.Height; y++)
-                    {
                         claimed[x, y]++;
-                    }
-                }
-            }
 
             var overlapCount = 0;
 
             for (var x = 0; x < 1000; x++)
-            {
                 for (var y = 0; y < 1000; y++)
-                {
                     if (claimed[x, y] > 1)
                         overlapCount++;
-                }
-            }
 
             return overlapCount;
         }

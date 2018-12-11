@@ -6,9 +6,9 @@ using System.Text.RegularExpressions;
 
 namespace Aoc2018.Solutions
 {
-    public class D4P1 : Solver<int>
+    public class D04P1 : Solver<int>
     {
-        protected override string Filename => @"Inputs\d4p1.input";
+        protected override string Filename => @"Inputs\d04.input";
         public override int Day => 4;
         public override int Part => 1;
 

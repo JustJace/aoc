@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Aoc2018.Solutions
 {
-    public class D2P1 : Solver<int>
+    public class D02P1 : Solver<int>
     {
         public override int Day => 2;
         public override int Part => 1;
-        protected override string Filename => @"Inputs\d2p1.input";
+        protected override string Filename => @"Inputs\d02.input";
 
         protected override int GetAnswer(string input)
         {

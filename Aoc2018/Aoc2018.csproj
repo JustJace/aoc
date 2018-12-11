@@ -10,31 +10,37 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Inputs\d1p1.input">
+    <None Update="Inputs\d10.input">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Inputs\d2p1.input">
+    <None Update="Inputs\d01.input">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Inputs\d3p1.input">
+    <None Update="Inputs\d02.input">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Inputs\d4p1.input">
+    <None Update="Inputs\d03.input">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Inputs\d5p1.input">
+    <None Update="Inputs\d04.input">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Inputs\d6p1.input">
+    <None Update="Inputs\d05.input">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Inputs\d7p1.input">
+    <None Update="Inputs\d06.input">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Inputs\d8p1.input">
+    <None Update="Inputs\d07.input">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Inputs\d9p1.input">
+    <None Update="Inputs\d08.input">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Inputs\d09.input">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Inputs\d11.input">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

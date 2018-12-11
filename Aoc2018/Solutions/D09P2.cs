@@ -7,13 +7,13 @@ using System.Text.RegularExpressions;
 
 namespace Aoc2018.Solutions
 {
-    public class D9P2 : Solver<BigInteger>
+    public class D09P2 : Solver<BigInteger>
     {
         public override int Day => 9;
 
         public override int Part => 2;
 
-        protected override string Filename => @"Inputs\d9p1.input";
+        protected override string Filename => @"Inputs\d09.input";
 
         protected override BigInteger GetAnswer(string input)
         {
