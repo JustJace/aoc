@@ -30,15 +30,15 @@ namespace Aoc2018.Solutions
             for (var x = 0; x < 300; x++)
             {
                 var totalPower = grid[y,x].PowerLevel;
-                for (var s = 1; s < Math.Min(300 - x, 300 - y); s++)
+                for (var s = 0; s < Math.Min(300 - x, 300 - y); s++)
                 {
-                    for (var dx = 0; dx < s + 1; dx++)
+                    for (var dx = 0; dx < s; dx++)
                         totalPower += grid[y + s, x + dx].PowerLevel;
 
-                    for (var dy = 0; dy < s + 1; dy++)
+                    for (var dy = 0; dy < s; dy++)
                         totalPower += grid[y + dy, x + s].PowerLevel;
 
-                    totalPower -= grid[y + s, x + s].PowerLevel;
+                    totalPower += grid[y + s, x + s].PowerLevel;
 
                     if (totalPower > best)
                     {
