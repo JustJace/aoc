@@ -47,8 +47,6 @@ namespace Aoc2018.Solutions
                     }
                 }
             }
-           
-          
 
             return bestCoordinate;
         }
@@ -57,18 +55,9 @@ namespace Aoc2018.Solutions
         {
             public Cell(int serial, int x, int y)
             {
-                Serial = serial;
-                X = x;
-                Y = y;
-
-                var p = (RackId * Y + Serial) * RackId;
-                p = int.Parse(p.ToString().PadLeft(3, '0').Reverse().ToArray()[2].ToString());
-                PowerLevel = p - 5;
+                PowerLevel = (((x + 10) * y + serial) * (x + 10)) / 100 % 10 - 5;
             }
-            public int Serial { get; }
-            public int X { get; set; }
-            public int Y { get; set; }
-            public int RackId => X + 10;
+
             public int PowerLevel { get; }
         }
     }
