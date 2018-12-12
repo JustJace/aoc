@@ -9,7 +9,7 @@ namespace Aoc2018.Solutions
     public class D12P2 : Solver<long>
     {
         public override int Day => 12;
-        public override int Part => 1;
+        public override int Part => 2;
 
         protected override string Filename => @"Inputs\d12.input";
 
