@@ -22,20 +22,39 @@ namespace Aoc2018
                 }
             }
 
-            foreach (var solver in solvers
-            //.OrderBy(s => s.Day).ThenBy(s => s.Part))
-                .OrderByDescending(s => s.Day)
-                .ThenByDescending(s => s.Part)
-                .Take(1))
-            {
-                TimedSolvesWithPrint(solver);
-            }
+            SolveExactly(solvers, 14, 2);
             
             Console.In.ReadLine();
         }
 
+        private static void SolveExactly(List<ISolve> solvers, int day, int part)
+        {
+            foreach (var solver in solvers.Where(s => s.Day == day && s.Part == part))
+            {
+                TimedSolvesWithPrint(solver);
+            }
+        }
 
-        static void TimedSolvesWithPrint(ISolve solver)
+        private static void SolveAll(List<ISolve> solvers)
+        {
+            foreach (var solver in solvers.OrderBy(s => s.Day).ThenBy(s => s.Part))
+            {
+                TimedSolvesWithPrint(solver);
+            }
+        }
+
+        private static void SolveMostRecent(List<ISolve> solvers)
+        {
+            foreach (var solver in solvers
+               .OrderByDescending(s => s.Day)
+               .ThenByDescending(s => s.Part)
+               .Take(1))
+            {
+                TimedSolvesWithPrint(solver);
+            }
+        }
+
+        static void TimedSolvesWithPrint(ISolve solver, int averageOver = 10)
         {
             var answer = solver.Solve();
 
@@ -49,7 +68,7 @@ namespace Aoc2018
 
             var times = new List<double>();
 
-            for (var i = 0; i < 10; i++)
+            for (var i = 0; i < averageOver; i++)
             {
                 _stopwatch.Restart();
                 solver.Solve();
@@ -58,10 +77,14 @@ namespace Aoc2018
                 times.Add(_stopwatch.Elapsed.TotalMilliseconds);
             }
 
-            Console.WriteLine($@"
+            if (times.Any())
+            {
+
+                Console.WriteLine($@"
 Hi: {times.Max():N3}ms
 Lo: {times.Min():N3}ms
 Av: {times.Average():N3}ms");
+            }
         }
     }
 }
