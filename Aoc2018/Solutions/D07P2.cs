@@ -19,7 +19,7 @@ namespace Aoc2018.Solutions
 
             var regex = new Regex(@"Step ([A-Z]) must be finished before step ([A-Z]) can begin\.");
             var instructions = input
-                .Split(Environment.NewLine)
+                .Split("\n")
                 .Select(i => regex.Match(i))
                 .Select(m => new Instruction
                 {
@@ -88,7 +88,7 @@ namespace Aoc2018.Solutions
                 totalSeconds++;
 
                 //Console.Write($"{totalSeconds.ToString().PadLeft(4)}s - ");
-                //for(var e = 0; e < workerCount; e++)
+                //for (var e = 0; e < workerCount; e++)
                 //{
                 //    if (string.IsNullOrEmpty(elves[e]))
                 //    {

@@ -22,8 +22,10 @@ namespace Aoc2018
                 }
             }
 
-            SolveExactly(solvers, 14, 2);
-            
+            SolveExactly(solvers, 21, 1);
+            //SolveMostRecent(solvers);
+            //SolveAll(solvers);
+
             Console.In.ReadLine();
         }
 
@@ -31,7 +33,7 @@ namespace Aoc2018
         {
             foreach (var solver in solvers.Where(s => s.Day == day && s.Part == part))
             {
-                TimedSolvesWithPrint(solver);
+                TimedSolvesWithPrint(solver, 0);
             }
         }
 
